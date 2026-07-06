@@ -1,0 +1,285 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0b160b;
+  color: #f5f5f5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero {
+  background: linear-gradient(180deg, #214d21, #173617);
+  border: 2px solid #6f9f3a;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 25px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, .45);
+}
+
+.logo-bib {
+    width: 90px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 12px rgba(255,255,255,0.25));
+    transition: transform .25s ease, filter .25s ease;
+}
+
+.logo-bib:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 18px rgba(255,255,255,.45));
+}
+
+/* Todos os textos do cabeçalho */
+
+.hero h2,
+.hero h1,
+.hero h3,
+.hero p {
+    color: #d8e6c3;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Sistema de fila */
+
+.hero h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/* Título principal */
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+/* Nome do batalhão */
+
+.hero h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/* Descrição */
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.card h2 {
+  margin-bottom: 15px;
+  color: #d8e6c3;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #4b6b2a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 4px;
+}
+
+button:hover {
+  background: #5f8635;
+}
+
+.btn-vermelho {
+  background: #8b2c2c;
+}
+
+.btn-vermelho:hover {
+  background: #a83838;
+}
+
+.btn-azul {
+  background: #255c86;
+}
+
+.btn-azul:hover {
+  background: #3176aa;
+}
+
+.item-fila {
+  background: #292929;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border-left: 5px solid #4b6b2a;
+}
+
+.item-atendimento {
+  background: #3b2f1f;
+  border-left: 5px solid #d6a23a;
+}
+
+.item-finalizado {
+  background: #1f3b25;
+  border-left: 5px solid #3cb85c;
+}
+
+.item-nao {
+  background: #3b1f1f;
+  border-left: 5px solid #d9534f;
+}
+
+.destaque {
+  background: #253b25;
+  border: 2px solid #7fbf3f;
+  text-align: center;
+}
+
+.alerta {
+  background: #4a3a16;
+  border: 2px solid #ffcc33;
+  color: #fff4c2;
+}
+
+.escondido {
+  display: none;
+}
+
+.status-texto {
+  margin-top: 8px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+strong {
+  color: #ffffff;
+}
+
+.login-card {
+  max-width: 420px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.erro-login {
+  color: #ff7777;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .hero {
+    padding: 20px;
+  }
+
+  .logo-bib {
+    width: 90px;
+    filter: drop-shadow(0 0 12px rgba(255,255,255,0.25));
+  }
+
+  .hero h2 {
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero h3,
+  .hero p {
+    font-size: 16px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  input {
+    font-size: 15px;
+  }
+
+  .item-fila {
+    font-size: 15px;
+  }
+}
+
+/* HEADER DO PAINEL BARBEIRO */
+.admin-hero {
+  max-width: 780px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+}
+
+.admin-hero h2,
+.admin-hero h3,
+.admin-hero p {
+  color: #d8e6c3;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.admin-hero h1 {
+  color: #d8e6c3;
+  font-size: 28px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.admin-hero p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .admin-hero h1 {
+    font-size: 24px;
+  }
+
+  .admin-hero h2,
+  .admin-hero h3,
+  .admin-hero p {
+    font-size: 14px;
+  }
+}

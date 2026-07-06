@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbearia 20º BIB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+   <header class="hero">
+
+    <img src="20bib.png" alt="Brasão 20º BIB" class="logo-bib">
+
+    <h2>SISTEMA DE FILA ONLINE</h2>
+
+    <h1>BARBEARIA 20º BIB</h1>
+
+    <h3>20º Batalhão de Infantaria Blindado</h3>
+
+    <p>Controle de Atendimento da Barbearia</p>
+
+</header>
+
+    <section class="card">
+      <h2> Entrar na fila</h2>
+
+      <input type="text" id="nomeInput" placeholder="Ex: Cabo Daniel">
+
+      <button id="entrarBtn">Entrar na fila</button>
+    </section>
+
+    <section id="meuStatus" class="card destaque escondido"></section>
+
+    <section id="sairFilaArea" class="card escondido">
+      <button id="sairFilaBtn" class="btn-vermelho">🚪 Sair da fila</button>
+    </section>
+
+    <section class="card">
+      <h2> Em atendimento</h2>
+      <div id="emAtendimento">Nenhum atendimento iniciado.</div>
+    </section>
+
+    <section class="card">
+      <h2> Fila de espera</h2>
+      <div id="filaLista">Carregando fila...</div>
+    </section>
+
+  </div>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
