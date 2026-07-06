@@ -12,7 +12,8 @@ import {
 
 import {
   signInWithEmailAndPassword,
-  onAuthStateChanged
+  onAuthStateChanged,
+  signOut
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const loginArea = document.getElementById("loginArea");
@@ -21,6 +22,7 @@ const emailInput = document.getElementById("emailInput");
 const senhaInput = document.getElementById("senhaInput");
 const loginBtn = document.getElementById("loginBtn");
 const loginErro = document.getElementById("loginErro");
+const logoutBtn = document.getElementById("logoutBtn");
 
 const adminAtendimento = document.getElementById("adminAtendimento");
 const adminFila = document.getElementById("adminFila");
@@ -42,6 +44,14 @@ loginBtn.addEventListener("click", async () => {
     console.error("Erro no login:", error.code, error.message);
     loginErro.textContent = "Erro: " + error.code;
   }
+});
+
+logoutBtn.addEventListener("click", async () => {
+  const confirmar = confirm("Deseja realmente sair do painel?");
+
+  if (!confirmar) return;
+
+  await signOut(auth);
 });
 
 onAuthStateChanged(auth, (user) => {
