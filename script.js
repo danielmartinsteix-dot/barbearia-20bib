@@ -18,9 +18,11 @@ const emAtendimento = document.getElementById("emAtendimento");
 const meuStatus = document.getElementById("meuStatus");
 const sairFilaArea = document.getElementById("sairFilaArea");
 const sairFilaBtn = document.getElementById("sairFilaBtn");
+const statusBarbeariaPublico = document.getElementById("statusBarbeariaPublico");
 
 const TEMPO_CORTE = 20;
 
+let barbeariaAberta = true;
 let meuId = localStorage.getItem("meuIdBarbearia20Bib");
 let meuNomeSalvo = localStorage.getItem("meuNomeBarbearia20Bib");
 let todosGlobal = [];
@@ -29,7 +31,38 @@ if (meuNomeSalvo) {
   nomeInput.value = meuNomeSalvo;
 }
 
+onSnapshot(doc(db, "config", "barbearia"), (docSnap) => {
+  if (docSnap.exists()) {
+    barbeariaAberta = docSnap.data().aberta === true;
+  }
+
+  atualizarStatusBarbearia();
+});
+
+function atualizarStatusBarbearia() {
+  if (barbeariaAberta) {
+    statusBarbeariaPublico.className = "card destaque";
+    statusBarbeariaPublico.innerHTML = `
+      <h2>🟢 Barbearia aberta</h2>
+      <p>Você pode entrar na fila normalmente.</p>
+    `;
+    entrarBtn.disabled = false;
+  } else {
+    statusBarbeariaPublico.className = "card destaque alerta";
+    statusBarbeariaPublico.innerHTML = `
+      <h2>🔴 Barbearia fechada</h2>
+      <p>O atendimento está encerrado no momento.</p>
+    `;
+    entrarBtn.disabled = true;
+  }
+}
+
 entrarBtn.addEventListener("click", async () => {
+  if (!barbeariaAberta) {
+    alert("A barbearia está fechada no momento.");
+    return;
+  }
+
   const nome = nomeInput.value.trim();
 
   if (!nome) {

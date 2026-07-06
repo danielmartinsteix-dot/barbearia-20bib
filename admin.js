@@ -27,6 +27,10 @@ const adminFila = document.getElementById("adminFila");
 const finalizados = document.getElementById("finalizados");
 const naoCompareceram = document.getElementById("naoCompareceram");
 
+const statusBarbeariaAdmin = document.getElementById("statusBarbeariaAdmin");
+const abrirBarbeariaBtn = document.getElementById("abrirBarbeariaBtn");
+const fecharBarbeariaBtn = document.getElementById("fecharBarbeariaBtn");
+
 loginBtn.addEventListener("click", async () => {
   const email = emailInput.value.trim();
   const senha = senhaInput.value.trim();
@@ -52,6 +56,43 @@ onAuthStateChanged(auth, (user) => {
 });
 
 function iniciarPainel() {
+  const configRef = doc(db, "config", "barbearia");
+
+  onSnapshot(configRef, (docSnap) => {
+    if (!docSnap.exists()) {
+      statusBarbeariaAdmin.innerHTML = "Configuração não encontrada.";
+      return;
+    }
+
+    const aberta = docSnap.data().aberta === true;
+
+    if (aberta) {
+      statusBarbeariaAdmin.innerHTML = "🟢 Status atual: BARBEARIA ABERTA";
+      abrirBarbeariaBtn.disabled = true;
+      fecharBarbeariaBtn.disabled = false;
+    } else {
+      statusBarbeariaAdmin.innerHTML = "🔴 Status atual: BARBEARIA FECHADA";
+      abrirBarbeariaBtn.disabled = false;
+      fecharBarbeariaBtn.disabled = true;
+    }
+  });
+
+  abrirBarbeariaBtn.addEventListener("click", async () => {
+    await updateDoc(configRef, {
+      aberta: true
+    });
+  });
+
+  fecharBarbeariaBtn.addEventListener("click", async () => {
+    const confirmar = confirm("Tem certeza que deseja fechar a barbearia?");
+
+    if (!confirmar) return;
+
+    await updateDoc(configRef, {
+      aberta: false
+    });
+  });
+
   const filaQuery = query(collection(db, "fila"), orderBy("criadoEm", "asc"));
 
   onSnapshot(filaQuery, (snapshot) => {
