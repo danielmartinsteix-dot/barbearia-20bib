@@ -32,7 +32,7 @@ let meuNomeSalvo = localStorage.getItem("meuNomeBarbearia20Bib");
 let todosGlobal = [];
 
 async function limparSistemaNovoDia() {
- const hoje = "07/07/2026";
+  const hoje = "07/07/2026";
   const controleRef = doc(db, "config", "controleDia");
 
   try {
