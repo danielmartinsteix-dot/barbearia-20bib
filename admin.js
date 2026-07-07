@@ -48,7 +48,7 @@ async function fazerLogin() {
   loginErro.textContent = "Entrando...";
 
   if (!email || !senha) {
-    loginErro.textContent = "Digite e-mail e senha.";
+    loginErro.textContent = "Email ou senha incorretos.";
     return;
   }
 
