@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barbearia 20º BIB</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,47 +13,74 @@
 
   <div class="container">
 
-   <header class="hero">
+    <header class="hero">
 
-    <img src="20bib.png" alt="Brasão 20º BIB" class="logo-bib">
+      <img src="20bib.png" alt="Brasão 20º BIB" class="logo-bib">
 
-    <h2>SISTEMA DE FILA ONLINE</h2>
+      <h2>SISTEMA DE FILA ONLINE</h2>
 
-    <h1>BARBEARIA 20º BIB</h1>
+      <h1>BARBEARIA 20º BIB</h1>
 
-    <h3>20º Batalhão de Infantaria Blindado</h3>
+      <h3>20º BATALHÃO DE INFANTARIA BLINDADO</h3>
 
-    <p>Controle de Atendimento da Barbearia</p>
+      <p>CONTROLE DE ATENDIMENTO DA BARBEARIA</p>
 
-</header>
+    </header>
 
-<section id="statusBarbeariaPublico" class="card destaque">
-  Carregando status da barbearia...
-</section>
-
-    <section class="card">
-      <h2> Entrar na fila</h2>
-
-      <input type="text" id="nomeInput" placeholder="Ex: Sd Cabelo">
-
-      <button id="entrarBtn">Entrar na fila</button>
-    </section>
-
-    <section id="meuStatus" class="card destaque escondido"></section>
-
-    <section id="sairFilaArea" class="card escondido">
-      <button id="sairFilaBtn" class="btn-vermelho">🚪 Sair da fila</button>
+    <section id="statusBarbeariaPublico" class="card destaque">
+      Carregando status da barbearia...
     </section>
 
     <section class="card">
-      <h2> Em atendimento</h2>
-      <div id="emAtendimento">Nenhum atendimento iniciado.</div>
+      <h2>Entrar na fila</h2>
+
+      <input
+        type="text"
+        id="nomeInput"
+        placeholder="Ex: Sd Cabelo">
+
+      <button id="entrarBtn">
+        Entrar na fila
+      </button>
+    </section>
+
+    <section
+      id="meuStatus"
+      class="card destaque escondido">
+    </section>
+
+    <section
+      id="sairFilaArea"
+      class="card escondido">
+
+      <button
+        id="sairFilaBtn"
+        class="btn-vermelho">
+        🚪 Sair da fila
+      </button>
+
     </section>
 
     <section class="card">
-      <h2> Fila de espera</h2>
-      <div id="filaLista">Carregando fila...</div>
+      <h2>Em atendimento</h2>
+
+      <div id="emAtendimento">
+        Nenhum atendimento iniciado.
+      </div>
     </section>
+
+    <section class="card">
+      <h2>Fila de espera</h2>
+
+      <div id="filaLista">
+        Carregando fila...
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>
+        Por: Cb <strong>Daniel </strong>Martins Teixeira</p>
+    </footer>
 
   </div>
 
@@ -60,5 +88,4 @@
   <script type="module" src="script.js"></script>
 
 </body>
-
 </html>

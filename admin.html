@@ -21,62 +21,54 @@
     </section>
 
     <div id="painelAdmin" class="escondido">
-<header class="hero admin-hero">
 
-    <button id="logoutBtn" class="logout-btn">
-         Sair
-    </button>
+      <header class="hero admin-hero">
+        <button id="logoutBtn" class="logout-btn">Sair</button>
 
-    <h2>SISTEMA DE FILA ONLINE</h2>
-
-    <h1>PAINEL DO BARBEIRO</h1>
-
-    <h3>20º BATALHÃO DE INFANTARIA BLINDADO</h3>
-
-    <p>CONTROLE DE ATENDIMENTO DA BARBEARIA</p>
-
-</header>
-
-<section class="card">
-
-  <h2> Controle da barbearia</h2>
-
-  <p id="statusBarbeariaAdmin">Carregando status...</p>
-
-  <button id="abrirBarbeariaBtn" class="btn-azul">
-    Abrir barbearia
-  </button>
-
-  <button id="fecharBarbeariaBtn" class="btn-vermelho">
-    Fechar barbearia
-  </button>
-</section>
+        <h2>SISTEMA DE FILA ONLINE</h2>
+        <h1>PAINEL DO BARBEIRO</h1>
+        <h3>20º BATALHÃO DE INFANTARIA BLINDADO</h3>
+        <p>CONTROLE DE ATENDIMENTO DA BARBEARIA</p>
+      </header>
 
       <section class="card">
-        <h2> Em atendimento</h2>
+        <h2>Controle da barbearia</h2>
+
+        <p id="statusBarbeariaAdmin">Carregando status...</p>
+
+        <button id="abrirBarbeariaBtn" class="btn-azul">
+          Abrir barbearia
+        </button>
+
+        <button id="fecharBarbeariaBtn" class="btn-vermelho">
+          Fechar barbearia
+        </button>
+      </section>
+
+      <section class="card">
+        <h2>Em atendimento</h2>
         <div id="adminAtendimento">Nenhum atendimento iniciado.</div>
       </section>
 
       <section class="card">
-        <h2> Fila de espera</h2>
+        <h2>Fila de espera</h2>
         <div id="adminFila">Carregando fila...</div>
       </section>
 
+      <section class="card">
+        <h2 id="tituloFinalizados">Cortes finalizados: 0</h2>
+        <div id="finalizados">Nenhum corte finalizado</div>
+      </section>
 
       <section class="card">
-  <h2 id="tituloFinalizados">Cortes finalizados: 0</h2>
-  <div id="finalizados">Nenhum corte finalizado</div>
-</section>
+        <h2 id="tituloNaoCompareceram">Não compareceram: 0</h2>
+        <div id="naoCompareceram">Nenhuma falta</div>
+      </section>
 
-<section class="card">
-  <h2 id="tituloNaoCompareceram">Não compareceram: 0</h2>
-  <div id="naoCompareceram">Nenhuma falta</div>
-</section>
     </div>
 
   </div>
 
-  <script type="module" src="firebase-config.js"></script>
   <script type="module" src="admin.js"></script>
 </body>
 </html>
