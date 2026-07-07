@@ -292,8 +292,8 @@ button:disabled {
 
 .logout-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 18px;
+  right: 18px;
   background: #8b2c2c;
   color: white;
   border: none;
@@ -312,8 +312,8 @@ button:disabled {
 
 @media (max-width: 600px) {
   .logout-btn {
-    top: 12px;
-    right: 12px;
+    top: 6px;
+    right: 6px;
     width: auto;
     padding: 8px 12px;
     font-size: 13px;
