@@ -33,19 +33,33 @@ const statusBarbeariaAdmin = document.getElementById("statusBarbeariaAdmin");
 const abrirBarbeariaBtn = document.getElementById("abrirBarbeariaBtn");
 const fecharBarbeariaBtn = document.getElementById("fecharBarbeariaBtn");
 
-loginBtn.addEventListener("click", async () => {
+loginBtn.addEventListener("click", fazerLogin);
+
+senhaInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    fazerLogin();
+  }
+});
+
+async function fazerLogin() {
   const email = emailInput.value.trim().toLowerCase();
   const senha = senhaInput.value.trim();
+
+  loginErro.textContent = "Entrando...";
+
+  if (!email || !senha) {
+    loginErro.textContent = "Digite e-mail e senha.";
+    return;
+  }
 
   try {
     await signInWithEmailAndPassword(auth, email, senha);
     loginErro.textContent = "";
   } catch (error) {
-    console.error("Erro no login:", error.code, error.message);
+    console.error("Erro no login:", error);
     loginErro.textContent = "Erro: " + error.code;
   }
-});
-
+}
 logoutBtn.addEventListener("click", async () => {
   const confirmar = confirm("Deseja realmente sair do painel?");
 
