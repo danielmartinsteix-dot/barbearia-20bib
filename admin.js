@@ -32,6 +32,7 @@ const naoCompareceram = document.getElementById("naoCompareceram");
 const statusBarbeariaAdmin = document.getElementById("statusBarbeariaAdmin");
 const abrirBarbeariaBtn = document.getElementById("abrirBarbeariaBtn");
 const fecharBarbeariaBtn = document.getElementById("fecharBarbeariaBtn");
+let painelJaIniciado = false;
 
 loginBtn.addEventListener("click", fazerLogin);
 
@@ -80,8 +81,10 @@ onAuthStateChanged(auth, (user) => {
 });
 
 function iniciarPainel() {
-  const configRef = doc(db, "config", "barbearia");
+  if (painelJaIniciado) return;
+  painelJaIniciado = true;
 
+  const configRef = doc(db, "config", "barbearia");
   onSnapshot(configRef, (docSnap) => {
     if (!docSnap.exists()) {
       statusBarbeariaAdmin.innerHTML = "Configuração não encontrada.";
