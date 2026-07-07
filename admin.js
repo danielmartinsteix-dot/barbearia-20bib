@@ -34,7 +34,7 @@ const abrirBarbeariaBtn = document.getElementById("abrirBarbeariaBtn");
 const fecharBarbeariaBtn = document.getElementById("fecharBarbeariaBtn");
 
 loginBtn.addEventListener("click", async () => {
-  const email = emailInput.value.trim();
+  const email = emailInput.value.trim().toLowerCase();
   const senha = senhaInput.value.trim();
 
   try {
